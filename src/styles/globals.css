@@ -14,6 +14,7 @@ body {
   .sequencer {
     display: flex;
     flex-direction: column;
+    position: relative;
   }
   
   .channel {
@@ -34,19 +35,51 @@ body {
     background-color: orange;
   }
 
-  .column-separator {
+  .step.active-playing {
+    background-color: red;
+  }
+
+  .step.playing {
+    background-color: lightgreen;
+  }
+
+  .column-indicator-wrapper {
+    /* Add the following styles to position the column indicators at the bottom */
+    position: absolute;
+    bottom: -20px;
+    left: 0;
+    width: 100%;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
+  }
+  
+  .column-indicator {
+    /* Add the following styles to style the column indicators */
+    width: 12px;
+    height: 12px;
+    border-radius: 20%;
+    background-color: grey;
+    transition: background-color 0.2s ease-in-out;
+    margin: 0 4px;
+  }
+  
+  .column-indicator.playing {
+    /* Add the following styles to change the color of the playing column indicator */
+    background-color: lightgreen;
+  }
+
+  .column-separator {
+    position: relative;
+    display: inline-block;
+    width: 6px;
     height: 100%;
-    margin-left: 1px;
-    margin-right: 5px;
   }
   
   .separator-line {
     width: 2px;
     height: 40px;
     line-height: normal;
-    background-color: grey;
+    background-color: black;
     flex-grow: 1;
+    position: inherit;
   }
