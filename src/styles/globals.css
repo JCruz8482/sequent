@@ -1,3 +1,52 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .sequencer {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .channel {
+    display: flex;
+    margin-bottom: 10px;
+  }
+  
+  .step {
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+    background-color: grey;
+    border: none;
+    outline: none;
+  }
+  
+  .step.active {
+    background-color: orange;
+  }
+
+  .column-separator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    margin-left: 1px;
+    margin-right: 5px;
+  }
+  
+  .separator-line {
+    width: 2px;
+    height: 40px;
+    line-height: normal;
+    background-color: grey;
+    flex-grow: 1;
+  }
